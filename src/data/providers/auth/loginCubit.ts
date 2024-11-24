@@ -19,7 +19,7 @@ export default class LoginCubit extends BaseRequestCubit<IToken, IAuthLogin> {
       return v;
     } catch (_) {
       app.deleteCookie();
-      throw T.somethingWentWrong.s;
+      throw _;
     }
   }
 }

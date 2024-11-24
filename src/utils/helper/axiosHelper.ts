@@ -12,7 +12,7 @@ export default class AxiosHelper {
     } else {
       let message: string;
       try {
-        message = v.data.data.message;
+        message = v.data.message;
       } catch (e) {
         message = T.somethingWentWrong.s;
       }
@@ -22,17 +22,16 @@ export default class AxiosHelper {
 
   static error(v: any): string {
     if (v instanceof AxiosError) {
-      if(kDebugMode){}
       if (v.code === 'ECONNABORTED') {
         return T.websiteIsUnderMaintenance.s;
       }
-/*      let message: string;
+      let message: string;
       try {
-        message = v.message;
+        message = v.response!.data.message;
       } catch (e) {
         message = T.somethingWentWrong.s;
       }
-      return message;*/
+      return message;
     }
     return T.somethingWentWrong.s;
   }
