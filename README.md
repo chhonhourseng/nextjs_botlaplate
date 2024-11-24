@@ -16,21 +16,68 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Working with Translations 🌐
 
-To learn more about Next.js, take a look at the following resources:
+### Adding Strings
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npm run t
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+2. Use the new string
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```html
+import T from '@/translate';
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div>{T.hello.s}</div>
+```
+
+
+---
+
+## Working with Assets
+
+### Generate Assets
+
+```sh
+npm run assets
+```
+
+
+2. Use the new Asset
+
+```html
+import { Assets } from '@/assets';
+
+<img src={Assets.logo} alt="logo">
+```
+---
+
+## Working with Mason
+
+### Create Generate code
+#### Feature - (root)
+```sh
+mason make feature
+```
+#### Crud - (root)
+```sh
+mason make crud
+```
+#### Cubit
+```sh
+mason make cubit
+```
+#### Page
+```sh
+mason make page
+```
+#### Component
+```sh
+mason make component
+```
+---

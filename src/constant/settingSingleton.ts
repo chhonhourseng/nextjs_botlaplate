@@ -1,5 +1,8 @@
+import { app } from '@/constant/general';
+
 interface ISettingSingleton {
   lang?: string;
+  isLogin: boolean;
   isRefreshToken?: boolean;
 }
 
@@ -14,14 +17,15 @@ class SettingSingleton {
   public static getInstance(): SettingSingleton {
     if (!SettingSingleton.instance) {
       SettingSingleton.instance = new SettingSingleton({
-        lang: 'en-US',
+        lang: app.defaultLang,
         isRefreshToken: false,
+        isLogin: false,
       });
     }
     return SettingSingleton.instance;
   }
 
-  public change(v: ISettingSingleton): void {
+  public change(v: Partial<ISettingSingleton>): void {
     this.i = Object.assign({}, this.i, v);
   }
 

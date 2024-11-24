@@ -4,6 +4,7 @@ import IToken from '@/data/types/token';
 import { IUser } from '@/data/types/user';
 import moment from 'moment/moment';
 import { formatNumber } from 'number-format-helper';
+import SettingSingleton from '@/constant/settingSingleton';
 
 export default class AppHelper {
 
@@ -31,6 +32,10 @@ export default class AppHelper {
   number(v?: number): string | null | number {
     if (!v) return null;
     return formatNumber(v);
+  }
+
+  get setting(): SettingSingleton {
+    return SettingSingleton.getInstance();
   }
 
   get isLogin(): boolean {

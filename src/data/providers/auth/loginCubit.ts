@@ -13,6 +13,7 @@ export default class LoginCubit extends BaseRequestCubit<IToken, IAuthLogin> {
     try {
       const v = await this.service.login(d!);
       app.setToken = v.data;
+      app.setting.change({isLogin: true});
       const user = await this.service.getProfile();
       app.setUser = user.data;
       return v;

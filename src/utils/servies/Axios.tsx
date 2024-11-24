@@ -48,8 +48,8 @@ AxiosInstance.interceptors.response.use(function(response) {
       const service: TokenService = new TokenService();
       const token: ApiResponse<IToken> = await service.refreshToken();
 
-      AxiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + token.data.data.access_token;
-      app.setToken = token.data.data;
+      AxiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + token.data.access_token;
+      app.setToken = token.data;
 
       settingSingleton.change({
         isRefreshToken: false,
