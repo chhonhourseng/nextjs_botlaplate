@@ -9,18 +9,19 @@ import T from '@/translate';
 import LoginCubit from '@/data/providers/auth/loginCubit';
 import { useEffect } from 'react';
 import { StateStatus } from '@/data/enums/enum';
-import { kDebugMode } from '@/constant/general';
 import { useForm } from 'react-hook-form';
 import { IAuthLogin } from '@/data/types/auth';
+import { useRouter } from 'next/navigation';
 
 export  default function LoginPage(){
-  const [v, e] = useBloc(LoginCubit);
   useBloc(LanguageCubit);
+  const router = useRouter();
+
+  const [v, e] = useBloc(LoginCubit);
 
   useEffect(() => {
-    if (v.status == StateStatus.failure) {
-      if (kDebugMode) {
-      }
+    if (v.status == StateStatus.success) {
+      router.push('/');
     }
   }, [v.status]);
 

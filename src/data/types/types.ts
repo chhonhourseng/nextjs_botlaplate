@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { IPaginationMetaData } from '@/data/types/pagination';
 
-export type ApiResponse<K> = AxiosResponse<BaseResponse<K>>;
+export type ApiResponse<K> = BaseResponse<K>;
 
 export default interface BaseResponse<K> extends IPaginationMetaData {
   status_code: number;

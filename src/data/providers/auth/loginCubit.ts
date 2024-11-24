@@ -1,13 +1,25 @@
 import BaseRequestCubit from '@/utils/helper/cubit/baseRequestCubit';
-import { IAuth, IAuthLogin } from '@/data/types/auth';
+import { IAuthLogin } from '@/data/types/auth';
 import AuthService from '@/data/services/authService';
 import { ApiResponse } from '@/data/types/types';
+import IToken from '@/data/types/token';
+import { app } from '@/constant/general';
+import T from '@/translate';
 
-export default class LoginCubit extends BaseRequestCubit<IAuth, IAuthLogin> {
+export default class LoginCubit extends BaseRequestCubit<IToken, IAuthLogin> {
   private service: AuthService = new AuthService();
 
-  response(d?: IAuthLogin | undefined): Promise<ApiResponse<IAuth>> {
-    return this.service.login(d!);
+  async response(d?: IAuthLogin | undefined): Promise<ApiResponse<IToken>> {
+    try {
+      const v = await this.service.login(d!);
+      app.setToken = v.data;
+      const user = await this.service.getProfile();
+      app.setUser = user.data;
+      return v;
+    } catch (_) {
+      app.deleteCookie();
+      throw T.somethingWentWrong.s;
+    }
   }
 }
 

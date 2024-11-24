@@ -86,7 +86,7 @@ export default class AppHelper {
 
   logOut(): void {
     this.deleteCookie();
-    window.location.href = '/';
+    window.location.href = '/login';
   }
 
   toPascalCase(input: string): string {
