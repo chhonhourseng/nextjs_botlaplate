@@ -4,6 +4,30 @@ type L = ILanguage;
 
 export default class T {
 
+  static readonly logo : L = new ILanguage({
+    'en-US': "Logo",
+    'zh-CN': "商标",
+    'vi-VN': "Logo",
+    'km-KH': "និមិត្តសញ្ញា",
+
+  });
+
+  static readonly footer : L = new ILanguage({
+    'en-US': "Footer",
+    'zh-CN': "页脚",
+    'vi-VN': "Chân",
+    'km-KH': "បាតកថា",
+
+  });
+
+  static readonly home : L = new ILanguage({
+    'en-US': "Home",
+    'zh-CN': "家",
+    'vi-VN': "Nhà",
+    'km-KH': "ទំព័រដើម",
+
+  });
+
   static readonly personalDetails : L = new ILanguage({
     'en-US': "Personal Details",
     'zh-CN': "个人详细信息",

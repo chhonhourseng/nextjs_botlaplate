@@ -8,19 +8,24 @@ export interface ILanguage {
 
 export const LanguageItems: Array<ILanguage> = [
     {
-        code: "km-KH",
-        title: "Khmer",
-        url: Assets.kmKHSvg
+        code: 'en-US',
+        title: 'English',
+        url: Assets.enUSSvg,
     },
     {
-        code: "zh-CN",
-        title: "China",
-        url: Assets.zhCNSvg
+        code: 'zh-CN',
+        title: 'China',
+        url: Assets.zhCNSvg,
     },
     {
-        code: "en-US",
-        title: "English",
-        url: Assets.enUSSvg
-    }
+        code: 'km-KH',
+        title: 'Khmer',
+        url: Assets.kmKHSvg,
+    },
+    {
+        code: 'vi-VN',
+        title: 'Vietnam',
+        url: Assets.viVNSvg,
+    },
 ]
 

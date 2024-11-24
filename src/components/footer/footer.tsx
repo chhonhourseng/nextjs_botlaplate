@@ -1,10 +1,9 @@
-import { Assets } from '@/assets';
-import Link from 'next/link';
+import T from '@/translate';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#302E3199] mt-[24px] text-center">
-      <div>Footer</div>
+    <footer className="bg-[#302E3199] mt-[24px] text-center py-[20px]">
+      <div>{T.footer.r}</div>
     </footer>
   );
 }
