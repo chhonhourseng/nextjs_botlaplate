@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Inject fonts */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../themes/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../themes/fonts/poppins/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../themes/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../themes/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('../themes/fonts/nokoras/Nokora-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('../themes/fonts/nokoras/Nokora-Bold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('../themes/fonts/nokoras/Nokora-Bold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nokora';
+    src: url('../themes/fonts/nokoras/Nokora-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: "Poppins", "Nokora"
+}
+
+/* .button {
+    @apply bg-helper px-6 h-[48px] md:h-[56px] rounded-[8px]  text-[18px] font-medium;
+} */
+
+/* .button2 {
+    @apply bg-secondary-color px-6 h-[48px] md:h-[56px] rounded-[8px]  text-[18px] font-medium border border-br-primary;
+} */
+
+/* Common text gradient */
+.txt-helper {
+    background: linear-gradient(180deg, #F2AE26 0%, #F2831A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*  */
+/* Default bullet style */
+.mySwiper .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #908989; /* Inactive bullets color */
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Active bullet style (current slide) */
+.mySwiper .swiper-pagination-bullet-active {
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(180.83deg, #FFDCA7 20.43%, #EB7100 89.43%);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* For a translucent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-div {
+  width: 30%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <div class="centered-div" id="centeredDiv">
+          This is a centered div
+        </div>
+      </div>
+      
+</body>
+<script>
+    const overlay = document.getElementById('overlay');
+const centeredDiv = document.getElementById('centeredDiv');
+
+overlay.addEventListener('click', function (event) {
+  if (event.target === overlay) {
+    centeredDiv.style.display = 'none'; // Hides the centered div
+  }
+});
+
+</script>
+</html>
