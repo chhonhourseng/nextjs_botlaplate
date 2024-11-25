@@ -26,13 +26,13 @@ environment:
 #  * a list of values (enums only)
 #  * an optional separator (list only)
 vars:
-  feature:
-    type: string
-    description: Your feature name
-    default: Dash
-    prompt: What is feature name?
   name:
     type: string
     description: Your crud name
     default: Dash
     prompt: What is crud name?
+  feature:
+    type: string
+    description: Your feature name
+    default: Dash
+    prompt: What is feature name?
