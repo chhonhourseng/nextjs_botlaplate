@@ -1,0 +1,1 @@
+mason get component && mason get crud && mason get cubit && mason get feature && mason get page

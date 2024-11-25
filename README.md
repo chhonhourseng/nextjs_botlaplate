@@ -30,10 +30,18 @@ npm run t
 
 2. Use the new string
 
-```html
+```tsx
 import T from '@/translate';
 
-<div>{T.hello.s}</div>
+export  default function Page(){
+  
+  useBloc(LanguageCubit);
+  
+  return (
+    <div>{T.hello.s}</div>
+  );
+}
+
 ```
 
 
@@ -50,10 +58,15 @@ npm run assets
 
 2. Use the new Asset
 
-```html
+```tsx
 import { Assets } from '@/assets';
 
-<img src={Assets.logo} alt="logo">
+export  default function Page(){
+  return (
+    <img src={Assets.logo} alt="logo"/>
+  );
+}
+
 ```
 ---
 
@@ -80,4 +93,3 @@ mason make page
 ```sh
 mason make component
 ```
----
