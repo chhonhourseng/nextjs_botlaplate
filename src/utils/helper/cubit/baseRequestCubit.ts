@@ -42,7 +42,7 @@ export default abstract class BaseRequestCubit<K, L> extends Cubit<BaseRequestSt
 
       }
       this.patch({
-        ...result.data,
+        ...result,
         status: StateStatus.success,
         data: result.data,
       });
